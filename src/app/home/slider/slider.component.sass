@@ -1,0 +1,31 @@
+.glide
+  height: 40vw
+  display: flex
+  align-items: center
+  overflow: hidden
+
+.glide__bg
+  position: absolute
+  width: 100%
+  top: 0
+  z-index: -1
+
+.glide__bullet
+  background-color: white
+  margin: 0 0.5em
+  position: relative
+
+.glide__bullet--active:before
+  content: ''
+  border: 1px solid white
+  border-radius: 50px
+  position: absolute
+  top: -5px
+  left: -5px
+  right: -5px
+  bottom: -5px
+  z-index: -1
+
+.glide__slide
+  margin: 0 !important
+  width: 99.3vw !important
