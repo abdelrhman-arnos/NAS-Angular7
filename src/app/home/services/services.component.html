@@ -1,0 +1,48 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+      <button class="btn btn-outline-primary">جميع الخدمات</button>
+      <div class="y-line d-none d-lg-block"></div>
+      <h2>فهرس الخدمات</h2>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div [ngClass]="['service__block col-lg-2 d-flex justify-content-center align-items-center flex-column text-center py-4',
+         index === 0 ? ' offset-lg-1' : '', index === serviceActive ? 'active' : '']" (click)="serviceActive=index"
+         *ngFor="let service of services; let index = index">
+      <div class="service__img">
+        <img [src]="service.img" alt="">
+      </div>
+      <strong class="service__name">{{service.name}}</strong>
+    </div>
+  </div>
+</div>
+
+<div class="glide service__container py-5" id="services">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide" *ngFor="let count of [].constructor(10)">
+        <div class="card mx-2 rounded">
+            <div class="card__body p-3">
+              <h3 class="text-right">نص لوريم إيبسوم القياسي والمستخدم</h3>
+              <p class="text-right">لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر.
+                كان لوريم إيبسوم ولايزال المعيار.</p>
+            </div>
+            <div class="card__footer py-3 d-flex align-items-center justify-content-around">
+              <a href="#">إستفد من الخدمة</a>
+              <div class="card__icons">
+                <img src="../../../assets/svg/Services-Manual-Icon.svg" alt="Services-Manual-Icon">
+              </div>
+            </div>
+          </div>
+      </li>
+    </ul>
+  </div>
+  <div data-glide-el="controls">
+    <img src="../../../assets/svg/Slider-Arrow.svg" class="controls__previous"
+         data-glide-dir="<" alt="Slider-Arrow">
+    <img src="../../../assets/svg/Slider-Arrow.svg" class="controls__next"
+         data-glide-dir=">" alt="Slider-Arrow">
+  </div>
+</div>

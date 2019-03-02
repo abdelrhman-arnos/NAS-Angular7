@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-lg-5" id="mini-navbar">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav flex-row mr-auto">
+      <li class="nav-item">
+        <a class="nav-link px-2 font-weight-bold" href="#">EN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-2" href="#">
+          <img src="../../../assets/svg/Header-Sitemap-btn.svg" alt="Header-Sitemap-btn">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-2" href="#">
+          <img src="../../../assets/svg/Header-Grayscale-Colors-btn.svg" alt="Header-Grayscale-Colors-btn">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-2" href="#">
+          <img src="../../../assets/svg/Header-Contact-Us-btn.svg" alt="Header-Contact-Us-btn">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-2" href="#">
+          <img src="../../../assets/svg/Header-Search-btn.svg" alt="Header-Search-btn">
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-dark px-lg-5" id="main-navbar">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto py-3">
+      <li class="nav-item" *ngFor="let link of links">
+        <a class="nav-link text-light" href="#">{{link}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

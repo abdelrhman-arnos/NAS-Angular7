@@ -1,0 +1,89 @@
+$primary: #a12226
+$gray: #f5f5f5
+
+.y-line
+  height: 2px
+  width: 40vw
+  background-color: #e4d2a3
+
+.service__container
+  background-color: $gray
+  border: 2px solid lightgray
+
+.service__img--hover
+  background-color: $primary
+  border-color: transparentize(white, .7)
+  box-shadow: 0 0 0 10px transparentize($primary, .65)
+  + .service__name
+    color: $primary
+
+.service__img
+  background-color: gray
+  border-radius: 50%
+  width: 100px
+  height: 100px
+  display: flex
+  align-items: center
+  justify-content: center
+  border: 5px solid lightgray
+  margin-bottom: 15px
+  cursor: pointer
+  transition: ease-in .15s
+  &:hover, &.active
+    @extend .service__img--hover
+  + .service__name
+    color: gray
+  > img
+    width: 55px
+
+.service__block.active
+  &:before
+    content: ''
+    background-color: $gray
+    border: 2px solid lightgray
+    border-bottom: 0
+    position: absolute
+    top: 0
+    right: 0
+    bottom: -2px
+    left: 0
+    z-index: 1
+    border-top-right-radius: 10px
+    border-top-left-radius: 10px
+  .service__img
+    @extend .service__img--hover
+    z-index: 1
+  .service__name
+    z-index: 1
+
+.card
+  border: 2px solid lightgray
+  transition: ease-in-out .15s
+  &:hover
+    border-color: $primary
+    .card__footer
+      background-color: $primary
+      img
+        filter: brightness(100)
+      a
+        color: white
+
+.card__footer
+  background-color: lighten(lightgray, 10%)
+
+#services .glide__track
+  margin-right: 100px
+  margin-left: 100px
+
+.controls__previous, .controls__next
+  position: absolute
+  top: 50%
+  cursor: pointer
+
+.controls__previous
+  left: 25px
+  transform: translateY(-100%)
+
+.controls__next
+  right: 25px
+  transform: scaleX(-1) translateY(-100%)
