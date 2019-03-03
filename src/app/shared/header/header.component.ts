@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,9 @@ import {Component} from '@angular/core';
   styleUrls: ['./header.component.sass']
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  scroll = window.scrollY;
+  collapse = true;
   links: string[] = [
     ' الدعم والمساندة',
     'المركز الاعلامي',
@@ -15,4 +17,7 @@ export class HeaderComponent {
     'الأخبار',
     'عن المؤسسة'
   ];
+  ngOnInit() {
+    window.addEventListener('scroll', () => this.scroll = window.scrollY);
+  }
 }

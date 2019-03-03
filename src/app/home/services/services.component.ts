@@ -14,7 +14,7 @@ const investorsIcon = require('../../../assets/img/Services-Investors-Icon.png')
   styleUrls: ['./services.component.sass']
 })
 
-export class ServicesComponent implements AfterViewInit{
+export class ServicesComponent implements AfterViewInit {
   serviceActive = 1;
   services: object[] = [
     {
@@ -41,8 +41,7 @@ export class ServicesComponent implements AfterViewInit{
   ngAfterViewInit() {
     new Glide('#services', {
       autoplay: 3000,
-      startAt: 2,
-      perView: Math.round(window.innerWidth * .4 / 100),
+      perView: Math.round(window.innerWidth * .35 / 100),
       bound: true
     }).mount();
   }
