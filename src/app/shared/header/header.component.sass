@@ -1,13 +1,25 @@
+$primary: #a12226
+
 #mini-navbar
   a:hover, &:focus
     text-decoration: none
-    color: white
     img
-      filter: brightness(100)
+      filter: brightness(0)
+  &:not(.navbar-light)
+    a:hover, &:focus
+      color: white
+      img
+        filter: brightness(100)
 
 #main-navbar
-  ul
-    border-top: 1px solid transparentize(white, .9)
-    border-bottom: 1px solid transparentize(white, .9)
+  a
+    color: white
   li.active a
     font-weight: bold
+  &:not(.bg-dark)
+    ul
+      border-top: 1px solid transparentize(white, .9)
+      border-bottom: 1px solid transparentize(white, .9)
+
+.navbar-brand img
+  max-width: 25vw

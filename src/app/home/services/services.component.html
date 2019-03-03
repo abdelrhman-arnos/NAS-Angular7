@@ -8,7 +8,7 @@
   </div>
   <br>
   <div class="row">
-    <div [ngClass]="['service__block col-lg-2 d-flex justify-content-center align-items-center flex-column text-center py-4',
+    <div [ngClass]="['service__block col-lg-2 col-sm-3 d-flex justify-content-center align-items-center flex-column text-center py-4',
          index === 0 ? ' offset-lg-1' : '', index === serviceActive ? 'active' : '']" (click)="serviceActive=index"
          *ngFor="let service of services; let index = index">
       <div class="service__img">
@@ -18,7 +18,6 @@
     </div>
   </div>
 </div>
-
 <div class="glide service__container py-5" id="services">
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">

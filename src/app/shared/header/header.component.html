@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark px-lg-5" id="mini-navbar">
+<nav [ngClass]="['navbar navbar-expand-lg px-lg-5',
+ scroll!==0 ? 'navbar-light bg-light' : 'navbar-dark']"
+     id="mini-navbar">
   <div class="collapse navbar-collapse">
-    <ul class="navbar-nav flex-row mr-auto">
+    <ul class="navbar-nav flex-row mr-auto align-items-center">
       <li class="nav-item">
         <a class="nav-link px-2 font-weight-bold" href="#">EN</a>
       </li>
@@ -27,14 +29,17 @@
     </ul>
   </div>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-dark px-lg-5" id="main-navbar">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse">
+<nav [ngClass]="['navbar navbar-expand-lg px-lg-5 flex-row-reverse navbar-dark',
+ scroll!==0 ? 'bg-dark' : '']"
+     id="main-navbar">
+  <a class="navbar-brand" href="#">
+    <img src="../../../assets/img/Naseej_Logo.png" alt="Naseej Logo">
+  </a>
+  <span class="navbar-toggler-icon d-lg-none" (click)="collapse=!collapse"></span>
+  <div [ngClass]="['collapse navbar-collapse d-lg-block', collapse?'d-none':'d-block']">
     <ul class="navbar-nav mr-auto py-3">
       <li class="nav-item" *ngFor="let link of links">
-        <a class="nav-link text-light" href="#">{{link}}</a>
+        <a class="nav-link" href="#">{{link}}</a>
       </li>
     </ul>
   </div>
